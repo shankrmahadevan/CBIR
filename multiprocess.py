@@ -30,6 +30,7 @@ class MultiProcess:
         import tensorflow as tf
         mult_fact = self.pic_len // self.num_processes
         for img_path in pic_list[mult_fact * num_process:mult_fact * (num_process + 1)]:
+            '''https://docs.google.com/document/d/13ZmoTz5ejiBXMHTi-QYQeDimlXQgwfjQFMayzH2i7dg/edit?usp=sharing'''
             img = tf.keras.preprocessing.image.load_img(img_path, target_size=(299, 299))
             img = img.resize((299, 299), Image.ANTIALIAS)
             x = tf.keras.preprocessing.image.img_to_array(img)
